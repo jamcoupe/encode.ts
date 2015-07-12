@@ -1,6 +1,7 @@
 {
   "name": "encode.ts",
   "version": "0.0.2",
+
   "devDependencies": {
     "jasmine-core": "^2.3.4",
     "karma": "^0.12.37",
@@ -10,7 +11,7 @@
     "karma-tsc-preprocessor": "0.0.5",
     "requirejs": "^2.1.18"
   },
-  "private": true,
+
   "main": "main.js",
 
   "dependencies": {
