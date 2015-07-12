@@ -11,5 +11,5 @@
     "requirejs": "^2.1.18"
   },
   "private": true,
-  "main": "encode.js"
+  "main": "main.js"
 }

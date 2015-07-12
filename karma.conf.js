@@ -7,13 +7,14 @@ module.exports = function(config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
-
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine', 'requirejs'],
 
 	  files: [
 		  { pattern: 'test/_test_main.js', included: true, watched: true,  served: true },
+
+		  { pattern: 'node_modules/base64-js/lib/b64.js', watched: false, included: false, served: true},
 
 		  { pattern: 'src/**/*.ts', watched: true, included: false, served: false},
 		  { pattern: 'index.ts', watched: true, included: false, served: false},
