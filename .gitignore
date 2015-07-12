@@ -1,11 +1,8 @@
 node_modules
 .idea
-
-!typings/base64-js/*.d.ts
-typings
-
 src/**/*.js
 test/**/*.js
 /*.js
 !karma.conf.js
 !_test_main.js
+typings

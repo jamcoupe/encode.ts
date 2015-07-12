@@ -11,5 +11,9 @@
     "requirejs": "^2.1.18"
   },
   "private": true,
-  "main": "main.js"
+  "main": "main.js",
+
+  "dependencies": {
+    "base64-js": "latest"
+  }
 }
