@@ -1,9 +1,8 @@
+declare var crypto: Crypto;
+
 import {EMPTY_STRING} from './utf8';
 import {Hexadecimal} from './hexadecimal';
 
-declare var window = {
-  crypto: Crypto
-};
 
 export const UUID_BIT_LENGTH = 128;
 export const UUID_BYTE_LENGTH = UUID_BIT_LENGTH / 8;
@@ -26,7 +25,7 @@ export class Uuid {
   }
 
 
-  constructor(obj?: string|Uint8Array|Array) {
+  constructor(obj?: string|Uint8Array|Array<number>) {
 
     if(typeof obj === 'undefined'){
       this.data = this.uuid();
@@ -63,7 +62,7 @@ export class Uuid {
 
   private static uuid4() : Uint8Array {
     let buffer = new Uint8Array(16);
-    window.crypto.getRandomValues(buffer);
+    crypto.getRandomValues(buffer);
     buffer[6] = (0x40 | (buffer[6] & 0xf));
     buffer[8] = (0x80 | (buffer[8] & 0x3f));
     return buffer;
@@ -95,7 +94,7 @@ export class Uuid {
   }
 
 
-  public static isValid(value: string|Uint8Array|Array): boolean {
+  public static isValid(value: string|Uint8Array|Array<number>): boolean {
     if(typeof value === 'string') {
       let arr = value.split('-');
       var isCorrectLengths = arr.length === 5 && (arr[0].length === 8 && arr[1].length === 4 && arr[2].length === 4 && arr[3].length === 4 && arr[4].length === 12);

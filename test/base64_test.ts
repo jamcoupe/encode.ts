@@ -1,3 +1,5 @@
+/// <reference path="../typings/jasmine/jasmine.d.ts" />
+
 import {Base64} from './../src/base64';
 import {UTF8} from './../src/utf8';
 import {Hexadecimal} from './../src/hexadecimal';

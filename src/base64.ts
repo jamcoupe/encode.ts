@@ -13,8 +13,14 @@ export class Base64 {
   }
 
 
-  static getString(value: Uint8Array): string {
-    return base64js.fromByteArray(value);
+  static getString(value: Uint8Array|Array<number>): string {
+    var val;
+    if(value instanceof Uint8Array) {
+      val = value;
+    } else if(value instanceof Array) {
+      val = new Uint8Array(value);
+    }
+    return base64js.fromByteArray(val);
   }
 
 }

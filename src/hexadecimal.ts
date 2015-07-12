@@ -20,7 +20,7 @@ export class Hexadecimal {
   }
 
 
-  constructor(value: string|Uint8Array|Array) {
+  constructor(value: string|Uint8Array|Array<number>) {
     if(typeof value === 'object') {
       if(value instanceof Uint8Array) {
         this.data = value;

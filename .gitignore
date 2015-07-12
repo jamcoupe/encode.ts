@@ -3,6 +3,7 @@ node_modules
 src/**/*.js
 test/**/*.js
 /*.js
+/*.map.js
 !karma.conf.js
 !_test_main.js
 typings
