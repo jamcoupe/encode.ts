@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "umd",
+    "target": "ES5",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "preserveConstEnums": true,
+    "declaration": true,
+    "noResolve": false,
+    "inlineSources": true
+  }
+}

@@ -1,0 +1,9 @@
+node_modules
+.idea
+typings
+
+src/**/*.js
+test/**/*.js
+/*.js
+!karma-dev.conf.js
+!_test_main.js
