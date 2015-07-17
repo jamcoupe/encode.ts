@@ -1,5 +1,4 @@
-///<reference path="../typings/base64-js/b64.d.ts" />
-import 'base64';
+import {Base64 as B64} from './../node_modules/base64-js/base64';
 import {UTF8} from './utf8';
 
 
@@ -9,7 +8,7 @@ export class Base64 {
    * Pass the Base64 value
    */
   static getBytes(value: string): Uint8Array {
-    return base64js.toByteArray(value);
+    return B64.toByteArray(value);
   }
 
 
@@ -20,7 +19,7 @@ export class Base64 {
     } else if(value instanceof Array) {
       val = new Uint8Array(value);
     }
-    return base64js.fromByteArray(val);
+    return B64.fromByteArray(val);
   }
 
 }

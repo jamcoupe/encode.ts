@@ -3,7 +3,6 @@ declare var crypto: Crypto;
 import {EMPTY_STRING} from './utf8';
 import {Hexadecimal} from './hexadecimal';
 
-
 export const UUID_BIT_LENGTH = 128;
 export const UUID_BYTE_LENGTH = UUID_BIT_LENGTH / 8;
 
@@ -12,12 +11,12 @@ export enum UuidVersion {
 }
 
 
-
 export class Uuid {
 
   private data: Uint8Array = null;
   private strData: string = EMPTY_STRING;
   private version: UuidVersion = UuidVersion.V4;
+
 
 
   public getBytes(): Uint8Array {

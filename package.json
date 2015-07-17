@@ -1,6 +1,6 @@
 {
   "name": "encode.ts",
-  "version": "0.0.2",
+  "version": "0.0.3",
 
   "devDependencies": {
     "jasmine-core": "^2.3.4",
@@ -12,9 +12,9 @@
     "requirejs": "^2.1.18"
   },
 
-  "main": "main.js",
+  "main": "encode.js",
 
   "dependencies": {
-    "base64-js": "latest"
+    "base64-js": "jamcoupe/base64-js"
   }
 }

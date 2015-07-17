@@ -4,7 +4,6 @@ export const EMPTY_STRING = '';
 
 export class UTF8 {
 
-
 	public static getBytes(str: string): Uint8Array {
 	  str = str.replace(/\r\n/g, '\n');
 	  var out = [], p = 0;

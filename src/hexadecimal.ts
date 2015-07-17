@@ -4,7 +4,6 @@ export const HEX_REGEX = new RegExp('[0-9a-fA-F]');
 export const HEX_BASE = 16;
 
 
-
 /**
  * Immutable object that can parse Hexadecimal strings and byte array
  */
@@ -20,11 +19,13 @@ export class Hexadecimal {
   }
 
 
-  constructor(value: string|Uint8Array|Array<number>) {
+  constructor(value: string|Uint8Array|ArrayBuffer|Array<number>) {
     if(typeof value === 'object') {
       if(value instanceof Uint8Array) {
         this.data = value;
       } else if(value instanceof Array) {
+        this.data = new Uint8Array(value);
+      } else if(value instanceof ArrayBuffer) {
         this.data = new Uint8Array(value);
       }
     } else if(typeof value === 'string'){
