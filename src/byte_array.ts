@@ -1,6 +1,8 @@
 
 
-
+/**
+ * Uint8Array helpers functions
+ */
 export class ByteArray {
 
 

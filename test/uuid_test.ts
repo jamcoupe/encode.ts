@@ -1,4 +1,6 @@
-///<reference path="../typings/tsd.d.ts" />
+///<reference path="../typings/jasmine/jasmine.d.ts" />
+
+
 import {Uuid} from './../src/uuid';
 
 const uuidString = '6ba7b811-9dad-11d1-80b4-00c04fd430c8';

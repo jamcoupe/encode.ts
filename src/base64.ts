@@ -1,4 +1,4 @@
-import {Base64 as B64} from './../node_modules/base64-js/base64';
+import {Base64 as B64} from 'base64-js/base64';
 import {UTF8} from './utf8';
 
 
@@ -8,6 +8,7 @@ export class Base64 {
    * Pass the Base64 value
    */
   static getBytes(value: string): Uint8Array {
+    
     return B64.toByteArray(value);
   }
 

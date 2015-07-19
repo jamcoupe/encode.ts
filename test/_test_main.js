@@ -9,15 +9,18 @@ Object.keys(window.__karma__.files).forEach(function(file) {
 });
 
 
+console.log(allTestFiles)
+
+
 requirejs.config({
 
 	paths: {
-		'base64': './node_modules/base64-js/lib/b64'
+		'base64-js': './jspm_packages/github/jamcoupe/base64-js@master'
 	},
 
 	shim: {
-		'base64': {
-			exports: 'base64js'
+		'base64-js/base64': {
+			exports: 'Base64'
 		}
 	},
 

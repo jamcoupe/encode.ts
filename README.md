@@ -9,6 +9,10 @@ npm install
 ```
 
 ```bash
+jspm install
+```
+
+```bash
 tsd reinstall
 ```
 

@@ -11,16 +11,20 @@ module.exports = function(config) {
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine', 'requirejs'],
 
+	  // list of files to exclude
+    exclude: ['*.d.ts', '**/*.d.ts'],
+    
 	  files: [
 		  { pattern: 'test/_test_main.js', included: true, watched: true,  served: true },
 
-		  { pattern: 'node_modules/base64-js/lib/b64.js', watched: false, included: false, served: true},
+		  { pattern: 'jspm_packages/github/jamcoupe/**/*.js', watched: false, included: false, served: true},
 
+      
+		  { pattern: 'encode.ts', watched: true, included: false, served: false},
 		  { pattern: 'src/**/*.ts', watched: true, included: false, served: false},
-		  { pattern: 'index.ts', watched: true, included: false, served: false},
 		  { pattern: 'test/**/*.ts', watched: true, included: false, served: false},
 
-		  { pattern: 'index.js', included: false },
+		  { pattern: 'encode.js', included: false },
 		  { pattern: 'src/**/*.js', included: false },
 		  { pattern: 'test/**/*.js', included: false }
 	  ],
@@ -28,7 +32,7 @@ module.exports = function(config) {
 	  // preprocess matching files before serving them to the browser
 	  // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 	  preprocessors: {
-		  '**/*.ts': ['tsc']
+		  '*/**/*.ts': ['tsc']
 	  },
 
 
@@ -36,10 +40,6 @@ module.exports = function(config) {
 		  tsConfig: "tsconfig.json" //relative to the __dirname value
 	  },
 
-
-	  // list of files to exclude
-    exclude: [
-    ],
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
