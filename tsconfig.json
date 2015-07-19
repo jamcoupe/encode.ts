@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "module": "amd",
-    "target": "ES5",
+    "module": "umd",
+    "target": "es5",
     "removeComments": true,
     "preserveConstEnums": true,
     "inlineSources": true
