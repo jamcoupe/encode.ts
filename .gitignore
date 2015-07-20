@@ -3,9 +3,9 @@ jspm_packages
 .idea
 src/**/*.js
 test/**/*.js
-/*.js
-/*.js.map
-/*.map.js
+*.js
+*.js.map
+*.map.js
 !karma.conf.js
 !_test_main.js
 typings
