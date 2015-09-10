@@ -7,5 +7,6 @@ test/**/*.js
 *.js.map
 *.map.js
 !karma.conf.js
+!config.js
 !_test_main.js
 typings

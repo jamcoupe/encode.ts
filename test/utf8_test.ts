@@ -8,14 +8,12 @@ const utf8test = [
 
 describe('UTF8 Tests: ', () => {
 
-
   it('should get correct amount of bytes', () => {
     for(var i = 0; i < utf8test.length; i++) {
       var bytes = UTF8.getBytes(utf8test[i][0]);
       expect(bytes.length).toBe(utf8test[i][1]);
     }
   });
-
 
 });
 

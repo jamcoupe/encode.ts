@@ -4,7 +4,11 @@ import {Hexadecimal} from './../src/hexadecimal';
 const hexs = [
   ['2ab', [0x02, 0xAB], '02ab'],
   ['0', [0x00], '00'],
-  ['3f3bc67169ea71302599cf1b0f5d408b7b65d347', [0x3f, 0x3b, 0xc6, 0x71, 0x69, 0xea, 0x71, 0x30, 0x25, 0x99, 0xcf, 0x1b, 0x0f, 0x5d, 0x40, 0x8b, 0x7b, 0x65, 0xd3, 0x47], '3f3bc67169ea71302599cf1b0f5d408b7b65d347']
+  [
+    '3f3bc67169ea71302599cf1b0f5d408b7b65d347',
+    [0x3f, 0x3b, 0xc6, 0x71, 0x69, 0xea, 0x71, 0x30, 0x25, 0x99, 0xcf, 0x1b, 0x0f, 0x5d, 0x40, 0x8b, 0x7b, 0x65, 0xd3, 0x47],
+    '3f3bc67169ea71302599cf1b0f5d408b7b65d347'
+  ]
 ];
 
 describe('Hexadecimal Tests: ', () => {
@@ -52,14 +56,6 @@ describe('Hexadecimal Tests: ', () => {
       var string = new Hexadecimal(bytes).toString();
       expect(string).toEqual(expectedString);
     }
-  });
-
-
-
-  it('should get correct base64', () => {
-
-
-
   });
 
 

@@ -8,10 +8,6 @@ Object.keys(window.__karma__.files).forEach(function(file) {
   }
 });
 
-
-console.log(allTestFiles)
-
-
 requirejs.config({
 
 	paths: {
