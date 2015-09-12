@@ -8,26 +8,29 @@ const uuidBytes = [0x6b, 0xa7, 0xb8, 0x11, 0x9d, 0xad, 0x11, 0xd1, 0x80, 0xb4, 0
 const emptyUuidString = '00000000-0000-0000-0000-000000000000';
 
 
+describe('Uuid: ', () => {
 
-describe('Uuid Tests: ', () => {
 
-
-  it('creates an empty uuid', () => {
+  it('should create an empty uuid', () => {
     var emptyUuid = Uuid.empty();
     expect(emptyUuid.toString()).toEqual(emptyUuidString);
   });
 
 
-  it('creates uuid from existing string', () => {
+  it('should create uuid from existing string', () => {
     expect(new Uuid(uuidString).toString()).toEqual(uuidString);
   });
 
 
-  it('generated from uuids equal', () => {
-    var u1 = new Uuid(uuidString);
-    var u2 = new Uuid(uuidBytes);
-    expect(u1.equals(u2)).toBeTruthy();
-    expect(u2.equals(u1)).toBeTruthy();
+  describe('when creating uuids from two different data sources but they are the same', () => {
+
+    it('should still show that they equal each other', () => {
+      var u1 = new Uuid(uuidString);
+      var u2 = new Uuid(uuidBytes);
+      expect(u1.equals(u2)).toBeTruthy();
+      expect(u2.equals(u1)).toBeTruthy();
+    });
+
   });
 
 
@@ -37,6 +40,21 @@ describe('Uuid Tests: ', () => {
     expect(u1.equals(u2)).toBeFalsy();
     expect(u2.equals(u1)).toBeFalsy();
   });
+
+
+  describe('when passing in a uuid object', () => {
+
+    it('should return the original uuid object', () => {
+      var orig = new Uuid();
+
+      var notOrigin = new Uuid(orig);
+
+      expect(orig).toEqual(notOrigin);
+    })
+
+  });
+
+
 
 
 });

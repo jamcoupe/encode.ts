@@ -8,9 +8,8 @@
     "karma-chrome-launcher": "^0.2.0",
     "karma-jasmine": "^0.3.6",
     "karma-requirejs": "^0.2.2",
-    "karma-tsc-preprocessor": "0.0.5",
-    "requirejs": "^2.1.18"
-  },
+    "karma-tsc-preprocessor": "0.0.5"  },
+
   "main": "encode.js",
   "jspm": {
     "directories": {},

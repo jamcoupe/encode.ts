@@ -24,17 +24,17 @@ export class Uuid {
   }
 
 
-  constructor(obj?: string|Uint8Array|Array<number>) {
+  constructor(obj?: string|Uint8Array|Array<number>|Uuid) {
 
     if(typeof obj === 'undefined'){
       this.data = this.uuid();
     } else {
 
       if(Uuid.isValid(obj)) {
-
-        if(typeof obj === 'string') {
+        if(obj instanceof Uuid) {
+          return obj;
+        } else if(typeof obj === 'string') {
           this.data = Uuid.getBytes(obj);
-
         } else {
           if(obj instanceof Uint8Array) {
             this.data = obj;
@@ -93,13 +93,15 @@ export class Uuid {
   }
 
 
-  public static isValid(value: string|Uint8Array|Array<number>): boolean {
+  public static isValid(value: string|Uint8Array|Array<number>|Uuid): boolean {
     if(typeof value === 'string') {
       let arr = value.split('-');
       var isCorrectLengths = arr.length === 5 && (arr[0].length === 8 && arr[1].length === 4 && arr[2].length === 4 && arr[3].length === 4 && arr[4].length === 12);
       var isHex = Hexadecimal.isValid(arr.join(EMPTY_STRING));
       return isCorrectLengths && isHex;
-    } else {
+    } else if(value instanceof Uuid) {
+      return Uuid;
+    } else if(value instanceof Uint8Array || value instanceof Array) {
       return value.length === UUID_BYTE_LENGTH;
     }
   }
