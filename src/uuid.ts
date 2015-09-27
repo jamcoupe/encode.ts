@@ -94,16 +94,20 @@ export class Uuid {
 
 
   public static isValid(value: string|Uint8Array|Array<number>|Uuid): boolean {
+    var result = false;
+
     if(typeof value === 'string') {
       let arr = value.split('-');
       var isCorrectLengths = arr.length === 5 && (arr[0].length === 8 && arr[1].length === 4 && arr[2].length === 4 && arr[3].length === 4 && arr[4].length === 12);
       var isHex = Hexadecimal.isValid(arr.join(EMPTY_STRING));
-      return isCorrectLengths && isHex;
+      result = isCorrectLengths && isHex;
     } else if(value instanceof Uuid) {
-      return Uuid;
+      result = true;
     } else if(value instanceof Uint8Array || value instanceof Array) {
-      return value.length === UUID_BYTE_LENGTH;
+      result = value.length === UUID_BYTE_LENGTH;
     }
+
+    return result;
   }
 
 

@@ -3,8 +3,10 @@
 
 import {Uuid} from './../src/uuid';
 
+const invalidString = '32412-342-3423-42-34-23424242-34-234-23';
 const uuidString = '6ba7b811-9dad-11d1-80b4-00c04fd430c8';
 const uuidBytes = [0x6b, 0xa7, 0xb8, 0x11, 0x9d, 0xad, 0x11, 0xd1, 0x80, 0xb4, 0x00, 0xc0, 0x4f, 0xd4, 0x30, 0xc8];
+const invalidBytes = [4, 34534, 234, 234, 234,5, 754674, 65, 5674, 45];
 const emptyUuidString = '00000000-0000-0000-0000-000000000000';
 
 
@@ -48,8 +50,52 @@ describe('Uuid: ', () => {
       var orig = new Uuid();
 
       var notOrigin = new Uuid(orig);
-
       expect(orig).toEqual(notOrigin);
+    })
+
+  });
+
+
+  describe('when checking if a uuid is valid', () => {
+
+    it('should return a Uuid object as true', () => {
+      var id = new Uuid();
+
+      var result = Uuid.isValid(id);
+
+      expect(result).toBe(true);
+    });
+
+    it('should return a string uuid as true', () => {
+      var result = Uuid.isValid(uuidString);
+
+      expect(result).toBe(true);
+    });
+
+    it('should return an array as true', () => {
+      var result = Uuid.isValid(uuidBytes);
+
+      expect(result).toBe(true);
+    });
+
+    it('should return an Uint8Array as true', () => {
+      var setup = new Uint8Array(uuidBytes);
+
+      var result = Uuid.isValid(setup);
+
+      expect(result).toBe(true);
+    });
+
+    it('should return an invalid string format as false', () => {
+      var result = Uuid.isValid(invalidString);
+
+      expect(result).toBe(false);
+    });
+
+    it('should return an invalid array of numbers as false', () => {
+      var result = Uuid.isValid(invalidBytes);
+
+      expect(result).toBe(false);
     })
 
   });
