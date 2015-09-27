@@ -137,4 +137,9 @@ export class Uuid {
     }
   }
 
+
+  public toJSON() {
+    return this.toString();
+  }
+
 }

@@ -102,5 +102,22 @@ describe('Uuid: ', () => {
 
 
 
+  describe('when parsing the Uuid object through JSON.stringify', () => {
+
+    it('should return the string representation of that uuid', () => {
+
+      var setup = {
+        uuid: new Uuid(uuidBytes)
+      };
+
+      var result = JSON.stringify(setup);
+
+      var expectedResult = '{"uuid":"6ba7b811-9dad-11d1-80b4-00c04fd430c8"}';
+      expect(result).toBe(expectedResult);
+
+
+    });
+
+  });
 
 });
